@@ -2,10 +2,15 @@
 
 > ✅ 1 / 14
 
-## Prerequisites
+## Software Prerequisites
 
 ⚠️ NodeJS >=12.20
 ⚠️ TypeScript ^5.5.0
+
+## Knowledge Prerequisites
+
+- Basic OOP concepts.
+- Basic Typescipt / Intermediate programming knowledge.
 
 ### Why does this exist? What is it for?
 
