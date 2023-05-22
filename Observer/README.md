@@ -10,3 +10,11 @@
 -   The forecaster (`WeatherData`) needs to provide registering and deregistering APIs too. They take a reference to the `Observer` (recall that this step is crucial, otherwise there is no way the forecaster knows who and where to send data to).
 -   Each `Observer` will implement "what happens when the subject pushes data to them". This is business logic and maybe unique across different cases. All `Observer`s implement the `update()` method, it can be thought of as the edge of where `Observer`s receive data from the outside world (forecaster).
 -   In the current implementation, `display()` is called immediately after an `update()` happens inside Observers, but this is business logic, and can be done however the business requires.
+
+### auctions.ts
+
+-   In this example, `Auction` is the broadcaster, and `Bidder`s are `Observers`. It should be noted this implementation is slightly more complicated because we use generics to enhance the robustness of this code.
+-   The `Auction` can be used only if the type `T` has a base type of `Bidder`. This class implements several functions for registering, deregistering bidders, broadcasting the best bid so far, listening for bids, and also ending the auction.
+-   Every `Bidder` must be able to do 3 things, listen for the most recent bid (`update()`), actually bid (`bid()`), and know if they've won (`alertWin()`).
+-   `JeweleryBidding` is one such example of an implementation of `Bidder`. It should be noted that you may create your own auction (call it `MonalisaPaintingBid` or whatever) and implement almost the exact same API definitions.
+-   In summary, this architecture is perfect for an auction system because the auctioneer will listen for bids coming from bidders and in real time notify every bidder participating. In the end of the auction, the auction will also notify the winner.
