@@ -1,5 +1,19 @@
 # Overview
 
+The observer pattern consists of a `Subject` and at least one `Observer`. When an event happens in `Subject`, it sends a notification to `Observer`. `Observer` doesn't need to be polling the `Subject` for new events, instead `Subject` will ring up `Observer` when something new happens automatically. As you can imagine, this is wonderful for applications where information needs to be distributed to many stations from one central hub.
+
+In general, a pattern of implementing the Observer pattern looks like this:
+
+1. First, describe the `Subject` as a class. In a way, think of this as the "backend logic". This class has to have the following methods:
+    - A data structure to store references to observers.
+    - A way to add observers.
+    - A way to remove observers.
+    - A broadcaster. This will loop the references of observers and notify each observer sequentially.
+    - Business logic (the actual thing that this `Subject` is used for)
+2. Next, every `Observer` needs to implement a specific interface. This is to keep their types consistent so that the data structure of references to observers (mentioned in step 1) can be properly typed. More importantly, this interface will define the methods in terms of the actions a client is allowed to make (more on this in step 3).
+3. Next, implement a class that implements the interface from step 2. This class holds to "client logic". A good basic approach is to have:
+    - A way to listen for updates from the `Subject`. That is, a method that the `Subject` can call to make updates to the client.
+
 # Examples
 
 ### head-first-weather-with-getter-examples.ts
