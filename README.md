@@ -1,6 +1,6 @@
 # Design Patterns in Typescript (WIP)
 
-> ✅ 9 / 14
+> ✅ 10 / 14
 
 ## Software Prerequisites
 
@@ -9,8 +9,8 @@
 
 ## Knowledge Prerequisites
 
-- Basic OOP concepts.
-- Basic Typescipt / Intermediate programming knowledge.
+-   Basic OOP concepts.
+-   Basic Typescipt / Intermediate programming knowledge.
 
 ### Why does this exist? What is it for?
 
