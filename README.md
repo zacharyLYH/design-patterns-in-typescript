@@ -1,6 +1,6 @@
 # Design Patterns in Typescript (WIP)
 
-> ✅ 10 / 14
+> ✅ 11 / 14
 
 ## Software Prerequisites
 
